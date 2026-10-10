@@ -2273,37 +2273,7 @@
             }
 
             // ═══════════════════════════════════════════
-            // AI BRIDGE
-            // ═══════════════════════════════════════════
-            // Calls free public AI models hosted as Hugging Face
-            // Spaces, directly from this browser tab — there is no
-            // server of ours in the middle. This works because
-            // every public Gradio Space automatically exposes an
-            // API, and the official @gradio/client library (loaded
-            // above as a module) knows how to call it and hand back
-            // the resulting image.
-            //
-            // ------------------------------------------------------
-            // AI_PROVIDERS — HOW TO ADD OR REPLACE A MODEL
-            // ------------------------------------------------------
-            // Each task below tries these Spaces in order and stops
-            // at the first one that answers. They're free, community
-            // -run demos, so one can occasionally be asleep or
-            // temporarily broken — that's normal, which is why more
-            // than one is listed per task, with a local fallback if
-            // every AI option is unreachable.
-            //
-            // To swap or add one:
-            //   1. Go to https://huggingface.co/spaces and search
-            //      "colorization", "GFPGAN", or "Real-ESRGAN" (or
-            //      any task you want to add).
-            //   2. Open a Space and confirm it says "Running" and
-            //      shows the Gradio logo at the bottom of the app.
-            //   3. Copy the "OWNER/NAME" part of its address, e.g.
-            //      huggingface.co/spaces/OWNER/NAME  ->  "OWNER/NAME"
-            //   4. Paste that string into the right list below.
-            // No other code changes are needed — this page reads
-            // whatever inputs that Space expects automatically.
+          
             // ------------------------------------------------------
             const AI_PROVIDERS = {
                 colorize: [
@@ -2467,12 +2437,7 @@
             $("#btnUpscale").onclick = () => runAI("upscale");
 
             // ═══════════════════════════════════════════
-            // RETOUCH ASSISTANT
-            // ------------------------------------------------------
-            // A small rules-based helper (not a language model) that
-            // reads a few keywords from what you type and nudges the
-            // matching sliders — instant, works offline, and free.
-            // Add more phrases by extending RETOUCH_RULES below.
+           
             // ═══════════════════════════════════════════
             const RETOUCH_RULES = [
                 { keywords: ["dark", "shadow", "underexposed"], adjust: { brightness: 8, contrast: 2 }, reply: "Brightened it up a bit." },
